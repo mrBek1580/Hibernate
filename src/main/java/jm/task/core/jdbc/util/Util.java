@@ -22,8 +22,9 @@ public class Util {
             configuration.setProperty("hibernate.connection.url", URL);
             configuration.setProperty("hibernate.connection.username", LOGIN);
             configuration.setProperty("hibernate.connection.password", PASSWORD);
-            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-            configuration.addAnnotatedClass(User.class);
+            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");  //какая реляционная бд используется
+//            configuration.setProperty("hibernate.show_sql", "true");
+            configuration.addAnnotatedClass(User.class);  //чтобы хибер отслеживал сущность entity
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
