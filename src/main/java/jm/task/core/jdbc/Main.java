@@ -13,13 +13,12 @@ public class Main {
         // реализуйте алгоритм здесь
         UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
         UserServiceImpl userService = new UserServiceImpl();
-//        userDaoHibernate.doSomething();
-//        userService.saveUser("aibek", "akynbekov", (byte) 23);
-//        userService.saveUser("artur", "kanybekov", (byte) 25);
+        userService.saveUser("aibek", "akynbekov", (byte) 23);
+        userService.saveUser("artur", "kanybekov", (byte) 25);
         List<User> users = userService.getAllUsers();
         for (User user : users) {
             System.out.println(user);
         }
-//        userService.createUsersTable();
+        userService.createUsersTable();
     }
 }
